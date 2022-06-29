@@ -1,0 +1,27 @@
+
+<div class="manage">
+    <div  class="">
+        <i *ngFor="let user of users">
+         <div class="w-50 p-4 bg-light bg-opacity-10  border  rounded-end" [ngStyle]="{'border-color':user.isDeleted===false?'green':'red'}" [ngClass]="{'border-success':user.isDeleted===false,'border-danger':user.isDeleted===true}"> 
+             {{user.firstName}}
+             {{user.lastName}}
+             <div class="text-end">
+             <button type="button" (click)="onSelect(user)" class="btn btn-primary" >Details</button>
+            </div>
+        </div><br>
+  
+        </i>
+   
+</div>
+</div>
+<div >
+  <div *ngIf="selectedUser" class="p-1 bg-light bg-opacity-10 border border-success text-start   d-flex flex-column mb-3 " style="width: 339px;position:absolute; top:200px;right:100px;">
+      <h2 class="p-2">{{selectedUser.firstName}}</h2>
+      <div class="p-2 " [style.color]="selectedUser.isDeleted==false?'green':'red'">{{selectedUser.isDeleted==false?'Active':'Deleted'}}</div>
+      <div class="p-2 ">Login id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{selectedUser.id}}</div>
+      <div class="p-2">FirstName:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{selectedUser.firstName}}</div>
+      <div class="p-2">LastName:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{selectedUser.lastName}}</div>
+      <div class="p-2">Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{selectedUser.age}}</div>
+
+  </div>
+</div>

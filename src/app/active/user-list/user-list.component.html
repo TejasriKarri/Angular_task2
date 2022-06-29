@@ -1,0 +1,19 @@
+<div class="active">
+    <div  class="">
+        <i *ngFor="let user of users">
+        <div  *ngIf="user.isDeleted==false" >
+         <div class="p-4 bg-light bg-opacity-10  border border-success  rounded-end"> 
+             {{user.firstName}}
+             {{user.lastName}}
+             <div class="text-end">
+             <button type="button" class="btn btn-danger" >Deactivate</button>
+            </div>
+        </div><br>
+    </div>
+        </i>
+   
+</div>
+</div>
+<!-- <div class="p-4 bg-light bg-opacity-10  border border-success  rounded-end">I'm a flexbox container!</div> -->
+<!-- let userr={{getData()}} -->
+<!-- p-4 bg-info bg-opacity-10 border border-info border-start-0 rounded-end -->
